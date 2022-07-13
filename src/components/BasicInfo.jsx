@@ -16,15 +16,12 @@ function BasicInfo() {
   const { newForm, setNewForm } = useContext(FormContext);
   const { setUsersArr } = useContext(FormContext);
   const { countUsersData } = useContext(FormContext);
-  const { setCountField } = useContext(FormContext);
   const {
     medical_record,
     first_name,
     last_name,
     birth_day,
   } = newForm;
-
-  const count = () => setCountField((prevState) => prevState + 1);
 
   const handleChange = (e) => {
     const { target: { value, name } } = e;
@@ -40,8 +37,6 @@ function BasicInfo() {
         full_name: fullName,
       }));
     }
-
-    count();
 
     setNewForm((prevState) => ({
       ...prevState,

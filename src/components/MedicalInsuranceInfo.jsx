@@ -17,14 +17,11 @@ function MedicalInsuranceInfo() {
   const { newForm, setNewForm } = useContext(FormContext);
   const { dataList, setDataList } = useContext(FormContext);
   const { countUsersData } = useContext(FormContext);
-  const { setCountField } = useContext(FormContext);
   const {
     medical_insurance,
     medical_insurance_card,
     card_expiration_date
   } = newForm;
-
-  const count = () => setCountField((prevState) => prevState + 1);
 
   const handleChange = (e) => {
     const { target: { value, name } } = e;
@@ -36,7 +33,7 @@ function MedicalInsuranceInfo() {
       ...prevState,
       [countUsersData]: newForm,
     }));
-    count();
+
     const everyFieldIsFilled = Object.values(newForm).every((field) => field.length !== 0);
 
     if (everyFieldIsFilled === true) {

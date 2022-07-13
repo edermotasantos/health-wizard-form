@@ -16,10 +16,6 @@ const theme = createTheme();
 
 function PersonalInfo2() {
   const { newForm, setNewForm } = useContext(FormContext);
-  const { setCountField } = useContext(FormContext);
-
-  const count = () => setCountField((prevState) => prevState + 1);
-
   const {
     email,
     mobile,
@@ -27,7 +23,6 @@ function PersonalInfo2() {
   } = newForm;
 
   const handleChange = ({ target: { value, name } }) => {
-    count();
     setNewForm((prevState) => ({
       ...prevState,
       [name]: value,

@@ -25,13 +25,8 @@ function FormProvider({ children }) {
   });
   const [usersArr, setUsersArr] = useState([]);
   const [dataList, setDataList] = useState([]);
-  const [newId, setNewId] = useState(0);
   const [countUsersData, setCountUsersData] = useState(0);
-  const [emptyList, setEmptyList] = useState(true);
   const [userPage, setUserPage] = useState();
-  const [row, setRow] = useState();
-  const [countField, setCountField] = useState(0);
-  const [noId, setNoId] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
 
   const data = {
@@ -43,20 +38,10 @@ function FormProvider({ children }) {
     setUsersArr,
     dataList,
     setDataList,
-    newId,
-    setNewId,
     countUsersData,
     setCountUsersData,
-    emptyList,
-    setEmptyList,
     userPage,
     setUserPage,
-    row,
-    setRow,
-    countField,
-    setCountField,
-    noId,
-    setNoId,
     isLoading,
     setIsLoading,
   };

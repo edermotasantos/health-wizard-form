@@ -17,9 +17,6 @@ const theme = createTheme();
 
 function PersonalInfo1() {
   const { newForm, setNewForm } = useContext(FormContext);
-  const { setCountField } = useContext(FormContext);
-
-  const count = () => setCountField((prevState) => prevState + 1);
 
   const {
     gender,
@@ -29,7 +26,6 @@ function PersonalInfo1() {
   } = newForm;
 
   const handleChange = ({ target: { value, name } }) => {
-    count();
     setNewForm((prevState) => ({
       ...prevState,
       [name]: value,
