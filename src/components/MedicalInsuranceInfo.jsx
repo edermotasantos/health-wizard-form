@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { ButtonGroup } from '@mui/material';
+import { ButtonGroup, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import FormContext from '../context/FormContext';
 import Copyright from './Copyright';
 import Previous from './Previous';
@@ -18,8 +18,8 @@ function MedicalInsuranceInfo() {
   const { dataList, setDataList } = useContext(FormContext);
   const { countUsersData } = useContext(FormContext);
   const { setCountField } = useContext(FormContext);
+  const { selectedMedicalInsurance, setSelectedGMedicalInsurance } = useContext(FormContext);
   const {
-    medical_insurance,
     medical_insurance_card,
     card_expiration_date
   } = newForm;
@@ -32,6 +32,9 @@ function MedicalInsuranceInfo() {
       ...prevState,
       [name]: value,
     }));
+    if (name === "medical_insurance") {
+      setSelectedGMedicalInsurance(value);
+    }
     setDataList((prevState) => ({
       ...prevState,
       [countUsersData]: newForm,
@@ -64,7 +67,25 @@ function MedicalInsuranceInfo() {
           <Box component="div" sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <TextField
+              <FormControl fullWidth>
+                    <InputLabel id="medicalInsuranceId">Convênio</InputLabel>
+                    <Select
+                        labelId="medicalInsuranceId"
+                        id="medical_insurance"
+                        name="medical_insurance"
+                        value={selectedMedicalInsurance}
+                        label="Convênio"
+                        onChange={handleChange}
+                    >
+                      <MenuItem value="Amil Assistência Médica"> Amil Assistência Médica</MenuItem>
+                      <MenuItem value="Bradesco Seguros">Bradesco Seguros</MenuItem>
+                      <MenuItem value="Central Nacional Unimed (CNU)">Central Nacional Unimed (CNU)</MenuItem>
+                      <MenuItem value="GreenLine Sistema de Saúde">GreenLine Sistema de Saúde</MenuItem>
+                      <MenuItem value="NotreDame Intermédica">NotreDame Intermédica</MenuItem>
+                      <MenuItem value="SulAmérica">SulAmérica</MenuItem>
+                    </Select>
+                </FormControl>
+                {/* <TextField
                   autoComplete="given-medical_insurance"
                   name="medical_insurance"
                   required
@@ -76,7 +97,7 @@ function MedicalInsuranceInfo() {
                   onChange={(e) => {
                     handleChange(e);
                   }}
-                />
+                /> */}
               </Grid>
               <Grid item xs={12}>
                 <TextField
