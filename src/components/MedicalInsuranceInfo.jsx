@@ -44,7 +44,6 @@ function MedicalInsuranceInfo() {
       const stringStorage = JSON.stringify(dataList);
       localStorage.setItem('lista_de_usuários', stringStorage);
     }
-    console.log(newForm);
   };
 
   return (
