@@ -85,19 +85,6 @@ function MedicalInsuranceInfo() {
                       <MenuItem value="SulAmérica">SulAmérica</MenuItem>
                     </Select>
                 </FormControl>
-                {/* <TextField
-                  autoComplete="given-medical_insurance"
-                  name="medical_insurance"
-                  required
-                  fullWidth
-                  id="medical_insurance"
-                  label="Convênio"
-                  autoFocus
-                  value={medical_insurance}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
-                /> */}
               </Grid>
               <Grid item xs={12}>
                 <TextField
