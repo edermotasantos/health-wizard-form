@@ -23,20 +23,20 @@ function MedicalInsuranceInfo() {
     card_expiration_date
   } = newForm;
 
-  const handleChange = (e) => {
-    const { target: { value, name } } = e;
+  const everyFieldIsFilled = () => Object.values(newForm).every((field) => field.length !== 0);
+
+  const handleChange = ({ target: { value, name } }) => {
     setNewForm((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+
     setDataList((prevState) => ({
       ...prevState,
       [countUsersData]: newForm,
     }));
-
-    const everyFieldIsFilled = Object.values(newForm).every((field) => field.length !== 0);
-
-    if (everyFieldIsFilled === true) {
+    console.log(everyFieldIsFilled());
+    if (everyFieldIsFilled()) {
       const stringStorage = JSON.stringify(dataList);
       localStorage.setItem('lista_de_usuários', stringStorage);
     }
@@ -89,9 +89,7 @@ function MedicalInsuranceInfo() {
                   label="Carteirinha do Convênio"
                   autoFocus
                   value={medical_insurance_card}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -104,9 +102,7 @@ function MedicalInsuranceInfo() {
                   label="Validade da carteirinha (mês/ano)"
                   autoFocus
                   value={card_expiration_date}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
             </Grid>
