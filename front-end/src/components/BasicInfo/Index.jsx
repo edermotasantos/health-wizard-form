@@ -23,9 +23,12 @@ function BasicInfo() {
     birth_day,
   } = newForm;
 
-  const handleChange = (e) => {
-    const { target: { value, name } } = e;
-    if (first_name !== undefined && last_name !== undefined) {
+  const nameFieldIsFilled = () => {
+    return (first_name && last_name);
+  };
+
+  const handleChange = ({ target: { value, name } }) => {
+    if (nameFieldIsFilled()) {
       const fullName = `${first_name} ${last_name}`;
       setUsersArr((prevState) => ({
         ...prevState,
