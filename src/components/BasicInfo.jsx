@@ -64,7 +64,7 @@ function BasicInfo() {
           <Typography component="h1" variant="h5">
             Dados do Usuário
           </Typography>
-          <Box component="div" sx={{ mt: 3, margin: 'auto' }}>
+          <Box component="div" sx={{ mt: 3 }}>
             <Grid container spacing={2}>
             <Grid item xs={12}>
                 <TextField

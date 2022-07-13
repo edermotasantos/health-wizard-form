@@ -3,7 +3,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ButtonGroup } from '@mui/material';
@@ -11,17 +10,19 @@ import FormContext from '../context/FormContext';
 import Copyright from './Copyright';
 import Next from './Next';
 import Previous from './Previous';
+import { Select, Typography, FormControl, InputLabel } from '@mui/material';
+import { MenuItem } from '@mui/material';
 
 const theme = createTheme();
 
 function PersonalInfo1() {
   const { newForm, setNewForm } = useContext(FormContext);
   const { setCountField } = useContext(FormContext);
+  const { selectedGender, setSelectedGender } = useContext(FormContext);
 
   const count = () => setCountField((prevState) => prevState + 1);
 
   const {
-    gender,
     cpf,
     rg,
     rg_uf,
@@ -33,6 +34,9 @@ function PersonalInfo1() {
       ...prevState,
       [name]: value,
     }));
+    if (name === "gender") {
+      setSelectedGender(value);
+    }
   };
 
   return (
@@ -53,19 +57,24 @@ function PersonalInfo1() {
           <Box component="div" sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <TextField
-                  autoComplete="given-gender"
-                  name="gender"
-                  required
-                  fullWidth
-                  id="gender"
-                  label="Gênero"
-                  autoFocus
-                  value={gender}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
-                />
+                <FormControl fullWidth>
+                    <InputLabel id="genderId">Gênero</InputLabel>
+                    <Select
+                        labelId="genderId"
+                        id="gender"
+                        name="gender"
+                        value={selectedGender}
+                        label="Gênero"
+                        onChange={handleChange}
+                    >
+                      <MenuItem value="homem cisgênero">homem cisgênero</MenuItem>
+                      <MenuItem value="mulher cisgênero">mulher cisgênero</MenuItem>
+                      <MenuItem value="homem transgênero">homem transgênero</MenuItem>
+                      <MenuItem value="mulher transgênero">mulher transgênero</MenuItem>
+                      <MenuItem value="homem não-binário">homem não-binário</MenuItem>
+                      <MenuItem value="mulher não-binária">mulher não-binária</MenuItem>
+                    </Select>
+                </FormControl>
               </Grid>
               <Grid item xs={12}>
                 <TextField
