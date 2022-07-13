@@ -5,6 +5,7 @@ import Next from './Next';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Copyright from './Copyright';
+import Previous from './Previous';
 
 const theme = createTheme();
 
@@ -17,6 +18,7 @@ function MedicalInsuranceInfo() {
             Medical Insurance Info
           </Typography>
           <Next />
+          <Previous />
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
