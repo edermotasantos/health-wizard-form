@@ -7,6 +7,7 @@ import FormContext from './FormContext';
 function FormProvider({ children }) {
   const [currentStep, setCurrentStep] = useState(1);
   const [newForm, setNewForm] = useState({
+    medical_record: '',
     first_name: '',
     last_name: '',
     full_name: '',
@@ -20,8 +21,7 @@ function FormProvider({ children }) {
     phone: '',
     medical_insurance: '',
     medical_insurance_card: '',
-    card_expiration_date: '',
-    medical_record: ''
+    card_expiration_date: ''
   });
   const [usersArr, setUsersArr] = useState([]);
   const [dataList, setDataList] = useState([]);
