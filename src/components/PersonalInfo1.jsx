@@ -1,24 +1,124 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
+import React, { useContext } from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Next from './Next';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ButtonGroup } from '@mui/material';
+import FormContext from '../context/FormContext';
 import Copyright from './Copyright';
+import Next from './Next';
 import Previous from './Previous';
 
 const theme = createTheme();
 
 function PersonalInfo1() {
+  const { newForm, setNewForm } = useContext(FormContext);
+  const { setCountField } = useContext(FormContext);
+
+  const count = () => setCountField((prevState) => prevState + 1);
+
+  const {
+    gender,
+    cpf,
+    rg,
+    rg_uf,
+  } = newForm;
+
+  const handleChange = ({ target: { value, name } }) => {
+    count();
+    setNewForm((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
-        <Box>
-          <Typography component="h5" variant="h5">
-            Personal Info 1
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Typography component="h1" variant="h5">
+            Dados do Usuário
           </Typography>
-          <Next />
-          <Previous />
+          <Box component="div" sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="given-gender"
+                  name="gender"
+                  required
+                  fullWidth
+                  id="gender"
+                  label="Gênero"
+                  autoFocus
+                  value={gender}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="cpf"
+                  label="CPF"
+                  name="cpf"
+                  autoComplete="given-cpf"
+                  value={cpf}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="given-rg"
+                  name="rg"
+                  required
+                  fullWidth
+                  id="rg"
+                  label="RG"
+                  autoFocus
+                  value={rg}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="rg_uf"
+                  label="UF"
+                  name="rg_uf"
+                  autoComplete="given-rg_uf"
+                  value={rg_uf}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                />
+              </Grid>
+            </Grid>
+            <ButtonGroup
+              orientation="horizontal"
+              fullWidth
+            >
+              <Previous />
+              <Next />
+            </ButtonGroup>
+          </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
