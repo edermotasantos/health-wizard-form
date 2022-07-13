@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography, Box } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import Copyright from './Copyright';
+import Copyright from '../Copyright/Index';
 
 const theme = createTheme();
 

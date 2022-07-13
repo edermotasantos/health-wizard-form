@@ -7,10 +7,10 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ButtonGroup } from '@mui/material';
-import FormContext from '../context/FormContext';
-import Copyright from './Copyright';
-import Next from './Next';
-import Previous from './Previous';
+import FormContext from '../../context/FormContext';
+import Copyright from '../Copyright/Index';
+import Next from '../Next/Index';
+import Previous from '../Previous/Index';
 
 const theme = createTheme();
 

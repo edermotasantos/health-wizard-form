@@ -6,9 +6,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import FormContext from '../context/FormContext';
-import Copyright from './Copyright';
-import Next from './Next';
+import FormContext from '../../context/FormContext';
+import Copyright from '../Copyright/Index';
+import Next from '../Next/Index';
 
 const theme = createTheme();
 

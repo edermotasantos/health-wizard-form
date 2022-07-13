@@ -6,10 +6,10 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ButtonGroup } from '@mui/material';
-import FormContext from '../context/FormContext';
-import Copyright from './Copyright';
-import Next from './Next';
-import Previous from './Previous';
+import FormContext from '../../context/FormContext';
+import Copyright from '../Copyright/Index';
+import Next from '../Next/Index';
+import Previous from '../Previous/Index';
 import { Select, Typography, FormControl, InputLabel } from '@mui/material';
 import { MenuItem } from '@mui/material';
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Button from '@mui/material/Button';
-import FormContext from '../context/FormContext';
+import FormContext from '../../context/FormContext';
 
 function Next() {
   const { setCurrentStep } = useContext(FormContext);

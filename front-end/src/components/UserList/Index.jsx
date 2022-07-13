@@ -1,20 +1,20 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Next from './Next';
+import Next from '../Next/Index';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import Copyright from './Copyright';
+import Copyright from '../Copyright/Index';
 
 const theme = createTheme();
 
-function UserData() {
+function UserList() {
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <Box>
           <Typography component="h5" variant="h5">
-            User Data
+            User List
           </Typography>
           <Next />
           <Copyright sx={{ mt: 5 }} />
@@ -24,4 +24,4 @@ function UserData() {
   );
 }
 
-export default UserData;
+export default UserList;
