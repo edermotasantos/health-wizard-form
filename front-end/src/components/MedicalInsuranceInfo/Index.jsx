@@ -24,6 +24,7 @@ function MedicalInsuranceInfo() {
   } = newForm;
 
   const everyFieldIsFilled = () => Object.values(newForm).every((field) => field.length !== 0);
+  const storeUserList = (stringStorage) => localStorage.setItem('lista_de_usuários', stringStorage);
 
   const handleChange = ({ target: { value, name } }) => {
     setNewForm((prevState) => ({
@@ -35,10 +36,10 @@ function MedicalInsuranceInfo() {
       ...prevState,
       [countUsersData]: newForm,
     }));
-    console.log(everyFieldIsFilled());
+
     if (everyFieldIsFilled()) {
       const stringStorage = JSON.stringify(dataList);
-      localStorage.setItem('lista_de_usuários', stringStorage);
+      storeUserList(stringStorage);
     }
   };
 
