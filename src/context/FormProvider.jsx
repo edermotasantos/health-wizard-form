@@ -33,7 +33,6 @@ function FormProvider({ children }) {
   const [countField, setCountField] = useState(0);
   const [noId, setNoId] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedMedicalInsurance, setSelectedGMedicalInsurance] = useState();
 
   const data = {
     currentStep,
@@ -60,8 +59,6 @@ function FormProvider({ children }) {
     setNoId,
     isLoading,
     setIsLoading,
-    selectedMedicalInsurance,
-    setSelectedGMedicalInsurance,
   };
 
   return (

@@ -18,8 +18,8 @@ function MedicalInsuranceInfo() {
   const { dataList, setDataList } = useContext(FormContext);
   const { countUsersData } = useContext(FormContext);
   const { setCountField } = useContext(FormContext);
-  const { selectedMedicalInsurance, setSelectedGMedicalInsurance } = useContext(FormContext);
   const {
+    medical_insurance,
     medical_insurance_card,
     card_expiration_date
   } = newForm;
@@ -32,14 +32,10 @@ function MedicalInsuranceInfo() {
       ...prevState,
       [name]: value,
     }));
-    if (name === "medical_insurance") {
-      setSelectedGMedicalInsurance(value);
-    }
     setDataList((prevState) => ({
       ...prevState,
       [countUsersData]: newForm,
     }));
-
     count();
     const everyFieldIsFilled = Object.values(newForm).every((field) => field.length !== 0);
 
@@ -73,7 +69,7 @@ function MedicalInsuranceInfo() {
                         labelId="medicalInsuranceId"
                         id="medical_insurance"
                         name="medical_insurance"
-                        value={selectedMedicalInsurance}
+                        value={medical_insurance}
                         label="Convênio"
                         onChange={handleChange}
                     >
