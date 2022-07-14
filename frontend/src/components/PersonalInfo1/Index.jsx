@@ -21,7 +21,7 @@ const MenuProps = {
   PaperProps: {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
+      width: 10,
     },
   },
 };
@@ -126,9 +126,7 @@ function PersonalInfo1() {
                   name="cpf"
                   autoComplete="given-cpf"
                   value={cpf}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -141,9 +139,7 @@ function PersonalInfo1() {
                   label="RG"
                   autoFocus
                   value={rg}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
