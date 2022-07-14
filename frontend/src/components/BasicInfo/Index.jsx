@@ -74,9 +74,7 @@ function BasicInfo() {
                   label="Prontuário"
                   autoFocus
                   value={medical_record}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -89,9 +87,7 @@ function BasicInfo() {
                   label="Nome"
                   autoFocus
                   value={first_name}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -104,9 +100,7 @@ function BasicInfo() {
                   label="Sobrenome"
                   autoFocus
                   value={last_name}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -119,9 +113,7 @@ function BasicInfo() {
                   label="Data de Nascimento"
                   autoFocus
                   value={birth_day}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
             </Grid>
