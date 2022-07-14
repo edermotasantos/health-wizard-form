@@ -56,9 +56,7 @@ function PersonalInfo2() {
                   label="E-mail"
                   autoFocus
                   value={email}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -70,9 +68,7 @@ function PersonalInfo2() {
                   name="mobile"
                   autoComplete="given-mobile"
                   value={mobile}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -85,9 +81,7 @@ function PersonalInfo2() {
                   label="Telefone"
                   autoFocus
                   value={phone}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  onChange={handleChange}
                 />
               </Grid>
             </Grid>
