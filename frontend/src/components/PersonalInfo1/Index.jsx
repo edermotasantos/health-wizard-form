@@ -45,11 +45,20 @@ const unidadeDAFederacao = [
   'Tocantins (TO)',
 ];
 
+const genero = [
+  "homem cisgênero",
+  "mulher cisgênero",
+  "homem transgênero",
+  "mulher transgênero",
+  "homem não-binário",
+  "mulher não-binária",
+];
+
 function PersonalInfo1() {
   const { newForm, setNewForm } = useContext(FormContext);
 
   const {
-    gender,
+    gender_id,
     cpf,
     rg,
     uf_id,
@@ -85,18 +94,15 @@ function PersonalInfo1() {
                     <InputLabel id="genderId">Gênero</InputLabel>
                     <Select
                         labelId="genderId"
-                        id="gender"
-                        name="gender"
-                        value={gender}
+                        id="gender_id"
+                        name="gender_id"
+                        value={gender_id}
                         label="Gênero"
                         onChange={handleChange}
                     >
-                      <MenuItem value="homem cisgênero">homem cisgênero</MenuItem>
-                      <MenuItem value="mulher cisgênero">mulher cisgênero</MenuItem>
-                      <MenuItem value="homem transgênero">homem transgênero</MenuItem>
-                      <MenuItem value="mulher transgênero">mulher transgênero</MenuItem>
-                      <MenuItem value="homem não-binário">homem não-binário</MenuItem>
-                      <MenuItem value="mulher não-binária">mulher não-binária</MenuItem>
+                      { genero.map((gender, index) => (
+                        <MenuItem key={index} value={index + 1}>{gender}</MenuItem>
+                      )) }
                     </Select>
                 </FormControl>
               </Grid>
@@ -140,7 +146,7 @@ function PersonalInfo1() {
                         label="UF"
                         onChange={handleChange}
                     >
-                      {unidadeDAFederacao.map((uf, index) =>(
+                      {unidadeDAFederacao.map((uf, index) => (
                         <MenuItem key={index} value={index + 1}>{uf}</MenuItem>
                       ))}
                     </Select>
