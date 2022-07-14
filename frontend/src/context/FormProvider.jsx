@@ -7,6 +7,7 @@ import FormContext from './FormContext';
 function FormProvider({ children }) {
   const [currentStep, setCurrentStep] = useState(1);
   const [newForm, setNewForm] = useState({
+    admin_id: 1,
     medical_record: '',
     first_name: '',
     last_name: '',
