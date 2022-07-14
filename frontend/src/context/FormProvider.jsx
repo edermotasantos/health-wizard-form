@@ -15,7 +15,7 @@ function FormProvider({ children }) {
     gender: '',
     cpf: '',
     rg: '',
-    rg_uf: '',
+    uf_id: '',
     email: '',
     mobile: '',
     phone: '',

@@ -15,6 +15,36 @@ import { MenuItem } from '@mui/material';
 
 const theme = createTheme();
 
+const unidadeDAFederacao = [
+  'Acre (AC)',
+  'Alagoas (AL)',
+  'Amapá (AP)',
+  'Amazonas (AM)',
+  'Bahia (BA)',
+  'Ceará (CE)',
+  'Distrito Federal (DF)',
+  'Espírito Santo (ES)',
+  'Goiás (GO)',
+  'Maranhão (MA)',
+  'Mato Grosso (MT)',
+  'Mato Grosso do Sul (MS)',
+  'Minas Gerais (MG)',
+  'Pará (PA)',
+  'Paraíba (PB)',
+  'Paraná (PR)',
+  'Pernambuco (PE)',
+  'Piauí (PI)',
+  'Rio de Janeiro (RJ)',
+  'Rio Grande do Norte (RN)',
+  'Rio Grande do Sul (RS)',
+  'Rondônia (RO)',
+  'Roraima (RR)',
+  'Santa Catarina (SC)',
+  'São Paulo (SP)',
+  'Sergipe (SE)',
+  'Tocantins (TO)',
+];
+
 function PersonalInfo1() {
   const { newForm, setNewForm } = useContext(FormContext);
 
@@ -22,7 +52,7 @@ function PersonalInfo1() {
     gender,
     cpf,
     rg,
-    rg_uf,
+    uf_id,
   } = newForm;
 
   const handleChange = ({ target: { value, name } }) => {
@@ -30,6 +60,7 @@ function PersonalInfo1() {
       ...prevState,
       [name]: value,
     }));
+    console.log(newForm);
   };
 
   return (
@@ -99,18 +130,21 @@ function PersonalInfo1() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="rg_uf"
-                  label="UF"
-                  name="rg_uf"
-                  autoComplete="given-rg_uf"
-                  value={rg_uf}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
-                />
+                <FormControl fullWidth>
+                    <InputLabel id="rgUfId">UF</InputLabel>
+                    <Select
+                        labelId="rgUfId"
+                        id="uf_id"
+                        name="uf_id"
+                        value={uf_id}
+                        label="UF"
+                        onChange={handleChange}
+                    >
+                      {unidadeDAFederacao.map((uf, index) =>(
+                        <MenuItem key={index} value={index + 1}>{uf}</MenuItem>
+                      ))}
+                    </Select>
+                </FormControl>
               </Grid>
             </Grid>
             <ButtonGroup
