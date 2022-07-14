@@ -19,7 +19,7 @@ function FormProvider({ children }) {
     email: '',
     mobile: '',
     phone: '',
-    medical_insurance: '',
+    medical_insurance_id: '',
     medical_insurance_card: '',
     card_expiration_date: ''
   });

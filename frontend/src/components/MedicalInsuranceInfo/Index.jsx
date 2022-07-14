@@ -13,12 +13,21 @@ import Previous from '../Previous/Index';
 
 const theme = createTheme();
 
+const convenio = [
+  'Amil Assistência Médica',
+  'Bradesco Seguros',
+  'Central Nacional Unimed (CNU)',
+  'GreenLine Sistema de Saúde',
+  'NotreDame Intermédica',
+  'SulAmérica',
+];
+
 function MedicalInsuranceInfo() {
   const { newForm, setNewForm } = useContext(FormContext);
   const { dataList, setDataList } = useContext(FormContext);
   const { countUsersData } = useContext(FormContext);
   const {
-    medical_insurance,
+    medical_insurance_id,
     medical_insurance_card,
     card_expiration_date
   } = newForm;
@@ -65,18 +74,15 @@ function MedicalInsuranceInfo() {
                     <InputLabel id="medicalInsuranceId">Convênio</InputLabel>
                     <Select
                         labelId="medicalInsuranceId"
-                        id="medical_insurance"
-                        name="medical_insurance"
-                        value={medical_insurance}
+                        id="medical_insurance_id"
+                        name="medical_insurance_id"
+                        value={medical_insurance_id}
                         label="Convênio"
                         onChange={handleChange}
                     >
-                      <MenuItem value="Amil Assistência Médica"> Amil Assistência Médica</MenuItem>
-                      <MenuItem value="Bradesco Seguros">Bradesco Seguros</MenuItem>
-                      <MenuItem value="Central Nacional Unimed (CNU)">Central Nacional Unimed (CNU)</MenuItem>
-                      <MenuItem value="GreenLine Sistema de Saúde">GreenLine Sistema de Saúde</MenuItem>
-                      <MenuItem value="NotreDame Intermédica">NotreDame Intermédica</MenuItem>
-                      <MenuItem value="SulAmérica">SulAmérica</MenuItem>
+                      { convenio.map((medicalInsurance, index) => (
+                        <MenuItem key={index} value={index + 1}>{medicalInsurance}</MenuItem>
+                      )) }
                     </Select>
                 </FormControl>
               </Grid>

@@ -15,6 +15,17 @@ import { MenuItem } from '@mui/material';
 
 const theme = createTheme();
 
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
 const unidadeDAFederacao = [
   'Acre (AC)',
   'Alagoas (AL)',
@@ -69,7 +80,6 @@ function PersonalInfo1() {
       ...prevState,
       [name]: value,
     }));
-    console.log(newForm);
   };
 
   return (
@@ -99,10 +109,11 @@ function PersonalInfo1() {
                         value={gender_id}
                         label="Gênero"
                         onChange={handleChange}
+                        MenuProps={MenuProps}
                     >
                       { genero.map((gender, index) => (
                         <MenuItem key={index} value={index + 1}>{gender}</MenuItem>
-                      )) }
+                      ))}
                     </Select>
                 </FormControl>
               </Grid>
