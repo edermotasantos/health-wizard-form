@@ -12,7 +12,7 @@ function FormProvider({ children }) {
     first_name: '',
     last_name: '',
     full_name: '',
-    birth_day: '',
+    birth_date: '',
     gender_id: '',
     cpf: '',
     rg: '',

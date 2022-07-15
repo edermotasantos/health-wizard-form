@@ -20,7 +20,7 @@ function BasicInfo() {
     medical_record,
     first_name,
     last_name,
-    birth_day,
+    birth_date,
   } = newForm;
 
   const nameFieldIsFilled = () => {
@@ -105,14 +105,14 @@ function BasicInfo() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  autoComplete="given-birth_day"
-                  name="birth_day"
+                  autoComplete="given-birth_date"
+                  name="birth_date"
                   required
                   fullWidth
-                  id="birth_day"
+                  id="birth_date"
                   label="Data de Nascimento"
                   autoFocus
-                  value={birth_day}
+                  value={birth_date}
                   onChange={handleChange}
                 />
               </Grid>
