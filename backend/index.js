@@ -1,4 +1,6 @@
 const express = require('express');
+const userRoutes = require('./routes/userRoutes');
+
 
 const app = express();
 app.use(express.json());
@@ -13,5 +15,7 @@ app.use(cors());
 app.get('/', (request, response) => {
   response.send();
 });
+
+app.use('/users', userRoutes);
 
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}!`));
