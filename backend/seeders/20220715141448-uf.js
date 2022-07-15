@@ -16,7 +16,7 @@ module.exports = {
         id: 2,
         uf_code: 27,
         federation_unit: 'Alagoas (AL)',
-        abbreviation: 'AC',
+        abbreviation: 'AL',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -24,7 +24,7 @@ module.exports = {
         id: 3,
         uf_code: 16,
         federation_unit: 'Amapá (AP)',
-        abbreviation: 'AC',
+        abbreviation: 'AP',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -32,7 +32,7 @@ module.exports = {
         id: 4,
         uf_code: 13,
         federation_unit: 'Amazonas (AM)',
-        abbreviation: 'AC',
+        abbreviation: 'AM',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -40,7 +40,7 @@ module.exports = {
         id: 5,
         uf_code: 29,
         federation_unit: 'Bahia (BA)',
-        abbreviation: 'AC',
+        abbreviation: 'BA',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -48,7 +48,7 @@ module.exports = {
         id: 6,
         uf_code: 23,
         federation_unit: 'Ceará (CE)',
-        abbreviation: 'AC',
+        abbreviation: 'CE',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -56,7 +56,7 @@ module.exports = {
         id: 7,
         uf_code: 53,
         federation_unit: 'Distrito Federal (DF)',
-        abbreviation: 'AC',
+        abbreviation: 'DF',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -64,7 +64,7 @@ module.exports = {
         id: 8,
         uf_code: 32,
         federation_unit: 'Espírito Santo (ES)',
-        abbreviation: 'AC',
+        abbreviation: 'ES',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -72,7 +72,7 @@ module.exports = {
         id: 9,
         uf_code: 52,
         federation_unit: 'Goiás (GO)',
-        abbreviation: 'AC',
+        abbreviation: 'GO',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -80,7 +80,7 @@ module.exports = {
         id: 10,
         uf_code: 21,
         federation_unit: 'Maranhão (MA)',
-        abbreviation: 'AC',
+        abbreviation: 'MA',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -88,7 +88,7 @@ module.exports = {
         id: 11,
         uf_code: 51,
         federation_unit: 'Mato Grosso (MT)',
-        abbreviation: 'AC',
+        abbreviation: 'MT',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -96,7 +96,7 @@ module.exports = {
         id: 12,
         uf_code: 50,
         federation_unit: 'Mato Grosso do Sul (MS)',
-        abbreviation: 'AC',
+        abbreviation: 'MS',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -104,7 +104,7 @@ module.exports = {
         id: 13,
         uf_code: 31,
         federation_unit: 'Minas Gerais (MG)',
-        abbreviation: 'AC',
+        abbreviation: 'MG',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -112,7 +112,7 @@ module.exports = {
         id: 14,
         uf_code: 15,
         federation_unit: 'Pará (PA)',
-        abbreviation: 'AC',
+        abbreviation: 'PA',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -120,7 +120,7 @@ module.exports = {
         id: 15,
         uf_code: 25,
         federation_unit: 'Paraíba (PB)',
-        abbreviation: 'AC',
+        abbreviation: 'PB',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -128,7 +128,7 @@ module.exports = {
         id: 16,
         uf_code: 41,
         federation_unit: 'Paraná (PR)',
-        abbreviation: 'AC',
+        abbreviation: 'PR',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -136,7 +136,7 @@ module.exports = {
         id: 17,
         uf_code: 26,
         federation_unit: 'Pernambuco (PE)',
-        abbreviation: 'AC',
+        abbreviation: 'PE',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -144,7 +144,7 @@ module.exports = {
         id: 18,
         uf_code: 22,
         federation_unit: 'Piauí (PI)',
-        abbreviation: 'AC',
+        abbreviation: 'PI',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -152,7 +152,7 @@ module.exports = {
         id: 19,
         uf_code: 33,
         federation_unit: 'Rio de Janeiro (RJ)',
-        abbreviation: 'AC',
+        abbreviation: 'RJ',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -160,7 +160,7 @@ module.exports = {
         id: 20,
         uf_code: 24,
         federation_unit: 'Rio Grande do Norte (RN)',
-        abbreviation: 'AC',
+        abbreviation: 'RN',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -168,7 +168,7 @@ module.exports = {
         id: 21,
         uf_code: 43,
         federation_unit: 'Rio Grande do Sul (RS)',
-        abbreviation: 'AC',
+        abbreviation: 'RS',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -176,7 +176,7 @@ module.exports = {
         id: 22,
         uf_code: 11,
         federation_unit: 'Rondônia (RO)',
-        abbreviation: 'AC',
+        abbreviation: 'RO',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -184,7 +184,7 @@ module.exports = {
         id: 23,
         uf_code: 14,
         federation_unit: 'Roraima (RR)',
-        abbreviation: 'AC',
+        abbreviation: 'RR',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -192,7 +192,7 @@ module.exports = {
         id: 24,
         uf_code: 42,
         federation_unit: 'Santa Catarina (SC)',
-        abbreviation: 'AC',
+        abbreviation: 'SC',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -200,7 +200,7 @@ module.exports = {
         id: 25,
         uf_code: 35,
         federation_unit: 'São Paulo (SP)',
-        abbreviation: 'AC',
+        abbreviation: 'SP',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -208,7 +208,7 @@ module.exports = {
         id: 26,
         uf_code: 28,
         federation_unit: 'Sergipe (SE)',
-        abbreviation: 'AC',
+        abbreviation: 'SE',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -216,7 +216,7 @@ module.exports = {
         id: 27,
         uf_code: 17,
         federation_unit: 'Tocantins (TO)',
-        abbreviation: 'AC',
+        abbreviation: 'TO',
         createdAt: new Date(),
         updatedAt: new Date()
       },
