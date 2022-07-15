@@ -36,22 +36,22 @@ module.exports = {
         type: Sequelize.DATEONLY
       },
       cpf: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       rg: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       email: {
         type: Sequelize.STRING
       },
       mobile: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       medical_insurance_card: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       card_expiration_date: {
         type: Sequelize.DATEONLY

@@ -67,11 +67,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     cpf: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     rg: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     email: {
@@ -79,15 +79,15 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     mobile: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     medical_insurance_card: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     card_expiration_date: {
