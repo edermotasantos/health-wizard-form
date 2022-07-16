@@ -89,7 +89,6 @@ const createPatient = async ({
         medical_record,
         first_name,
         last_name,
-        full_name,
         birth_date,
         gender_id,
         cpf,
