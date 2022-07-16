@@ -33,6 +33,51 @@ const validateCPFLength = (cpf) => {
   }
 };
 
+const validateFields = {
+  checkUserId() {
+    return { err: { statusCode: BAD_REQUEST, message: userIdIsRequired } };
+  },
+  checkMedicalRecord() {
+    return { err: { statusCode: BAD_REQUEST, message: medicalRecordIsRequired } };
+  },
+  checkFirstName() {
+    return { err: { statusCode: BAD_REQUEST, message: firstNameIsRequired } };
+  },
+  checkLastName() {
+    return { err: { statusCode: BAD_REQUEST, message: lastNameIsRequired } };
+  },
+  checkBirthDate() {
+    return { err: { statusCode: BAD_REQUEST, message: birthDateIsRequired } };
+  },
+  checkGenderId() {
+    return { err: { statusCode: BAD_REQUEST, message: genderIdIsRequired } };
+  },
+  checkCPF() {
+    return { err: { statusCode: BAD_REQUEST, message: cpfIsRequired } };
+  },
+  checkRG() {
+    return { err: { statusCode: BAD_REQUEST, message: rgIsRequired } };
+  },
+  checkUFId() {
+    return { err: { statusCode: BAD_REQUEST, message: ufIdIsRequired } };
+  },
+  checkEmail() {
+    return { err: { statusCode: BAD_REQUEST, message: emailIsRequired } };
+  },
+  checkPhone() {
+    return { err: { statusCode: BAD_REQUEST, message: atLeastOneIsRequired } };
+  },
+  checkMedicalInsuranceId() {
+    return { err: { statusCode: BAD_REQUEST, message: medicalInsuranceIdIsRequired } };
+  },
+  checkMedicalInsuranceCard() {
+    return { err: { statusCode: BAD_REQUEST, message: medicalInsuranceCardIsRequired } };
+  },
+  checkCardExpirationDate() {
+    return { err: { statusCode: BAD_REQUEST, message: cardExpirationDateIsRequired } };
+  },
+};
+
 const validateUserData = async (
     user_id,
     medical_record,
@@ -50,20 +95,35 @@ const validateUserData = async (
     medical_insurance_card,
     card_expiration_date,
 ) => {
-  if (!user_id) return { err: { statusCode: BAD_REQUEST, message: userIdIsRequired } };
-  if (!medical_record) return { err: { statusCode: BAD_REQUEST, message: medicalRecordIsRequired } };
-  if (!first_name) return { err: { statusCode: BAD_REQUEST, message: firstNameIsRequired } };
-  if (!last_name) return { err: { statusCode: BAD_REQUEST, message: lastNameIsRequired } };
-  if (!birth_date) return { err: { statusCode: BAD_REQUEST, message: birthDateIsRequired } };
-  if (!gender_id) return { err: { statusCode: BAD_REQUEST, message: genderIdIsRequired } };
-  if (!cpf) return { err: { statusCode: BAD_REQUEST, message: cpfIsRequired } };
-  if (!rg) return { err: { statusCode: BAD_REQUEST, message: rgIsRequired } };
-  if (!uf_id) return { err: { statusCode: BAD_REQUEST, message: ufIdIsRequired } };
-  if (!email) return { err: { statusCode: BAD_REQUEST, message: emailIsRequired } };
-  if (!phone || !mobile) return { err: { statusCode: BAD_REQUEST, message: atLeastOneIsRequired } };
-  if (!medical_insurance_id) return { err: { statusCode: BAD_REQUEST, message: medicalInsuranceIdIsRequired } };
-  if (!medical_insurance_card) return { err: { statusCode: BAD_REQUEST, message: medicalInsuranceCardIsRequired } };
-  if (!card_expiration_date) return { err: { statusCode: BAD_REQUEST, message: cardExpirationDateIsRequired } };
+  const validateUserId = validateFields.checkUserId();
+  const validateMedicalRecord = validateFields.checkMedicalRecord();
+  const validateFirstName = validateFields.checkFirstName();
+  const validateLastName = validateFields.checkLastName();
+  const validateBirthDate = validateFields.checkBirthDate();
+  const validateGenderId = validateFields.checkGenderId();
+  const validateCPF = validateFields.checkCPF();
+  const validateRG = validateFields.checkRG();
+  const validateUFId = validateFields.checkUFId();
+  const validateEmail = validateFields.checkEmail();
+  const validatePhone = validateFields.checkPhone();
+  const validateMedicalInsuranceId = validateFields.checkMedicalInsuranceId();
+  const validateMedicalInsuranceCard = validateFields.checkMedicalInsuranceCard();
+  const validatecardExpirationDate = validateFields.checkCardExpirationDate();
+
+  if (!user_id) return validateUserId;
+  if (!medical_record) return validateMedicalRecord;
+  if (!first_name) return validateFirstName;
+  if (!last_name) return validateLastName;
+  if (!birth_date) return validateBirthDate;
+  if (!gender_id) return validateGenderId;
+  if (!cpf) return validateCPF;
+  if (!rg) return validateRG;
+  if (!uf_id) return validateUFId;
+  if (!email) return validateEmail;
+  if (!phone || !mobile) return validatePhone;
+  if (!medical_insurance_id) return validateMedicalInsuranceId;
+  if (!medical_insurance_card) return validateMedicalInsuranceCard;
+  if (!card_expiration_date) return validatecardExpirationDate;
 };
 
 const createPatient = async ({ 
