@@ -32,13 +32,26 @@ function BasicInfo() {
     }));
   }
 
+  const fillBirthDate = (name, value) => {
+    let newValue = value;
+    if(birth_date.length === 1 || birth_date.length === 4) {
+      newValue = value + '/'
+      if(newValue.includes('//')) {
+        newValue = birth_date.substring(0,3);
+      }
+      if(newValue.includes('/') && (newValue.length === 1)) newValue = '';
+    }
+    if(newValue.length > 10) newValue = newValue.substring(0,10);
+    fillForm(name, newValue);
+  }
+
   const handleChange = ({ target: { value, name } }) => {
+    if(name !== 'birth_date') fillForm(name, value);
     if (nameFieldIsFilled()) {
       const fullName = `${first_name} ${last_name}`;
       fillForm('full_name', fullName);
     }
-
-    fillForm(name, value);
+    fillBirthDate(name, value);
   };
 
   return (
