@@ -24,9 +24,7 @@ function FormProvider({ children }) {
     medical_insurance_card: '',
     card_expiration_date: ''
   });
-  const [usersArr, setUsersArr] = useState([]);
   const [dataList, setDataList] = useState([]);
-  const [countUsersData, setCountUsersData] = useState(0);
   const [userPage, setUserPage] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -35,12 +33,8 @@ function FormProvider({ children }) {
     setCurrentStep,
     newForm,
     setNewForm,
-    usersArr,
-    setUsersArr,
     dataList,
     setDataList,
-    countUsersData,
-    setCountUsersData,
     userPage,
     setUserPage,
     isLoading,

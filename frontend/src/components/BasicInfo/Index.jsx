@@ -14,8 +14,6 @@ const theme = createTheme();
 
 function BasicInfo() {
   const { newForm, setNewForm } = useContext(FormContext);
-  const { setUsersArr } = useContext(FormContext);
-  const { countUsersData } = useContext(FormContext);
   const {
     medical_record,
     first_name,
@@ -27,34 +25,20 @@ function BasicInfo() {
     return (first_name && last_name);
   };
 
-  const birthDateLength = () => {
-    console.log((birth_date.length === 8));
-    return ((birth_date.length === 8));
-  };
-
-  const handleChange = ({ target: { value, name } }) => {
-    if (nameFieldIsFilled()) {
-      const fullName = `${first_name} ${last_name}`;
-      setUsersArr((prevState) => ({
-        ...prevState,
-        [countUsersData]: fullName,
-      }));
-
-      setNewForm((prevState) => ({
-        ...prevState,
-        full_name: fullName,
-      }));
-    }
-
-    if (birthDateLength()) {
-      const stringBirthDateValue =  birth_date.toString();
-      console.log(stringBirthDateValue);
-    }
-
+  const fillForm = (name, value) => {
     setNewForm((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+  }
+
+  const handleChange = ({ target: { value, name } }) => {
+    if (nameFieldIsFilled()) {
+      const fullName = `${first_name} ${last_name}`;
+      fillForm('full_name', fullName);
+    }
+
+    fillForm(name, value);
   };
 
   return (
