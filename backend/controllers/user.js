@@ -1,8 +1,8 @@
 const userService = require('../services/user');
 
-const { tryAgainLater } = require('../schemas/messages');
+const { tryAgainLater } = require('../util/messages');
 
-const { OK, INTERNAL_SERVER_ERROR } = require('../schemas/statusCodes');
+const { OK, INTERNAL_SERVER_ERROR } = require('../util/statusCodes');
 
 const login = async (req, res) => {
   try {

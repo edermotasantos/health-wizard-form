@@ -1,8 +1,8 @@
 const patientService = require('../services/patient');
 
-const { tryAgainLater } = require('../schemas/messages');
+const { tryAgainLater } = require('../util/messages');
 
-const { OK, INTERNAL_SERVER_ERROR } = require('../schemas/statusCodes');
+const { OK, INTERNAL_SERVER_ERROR } = require('../util/statusCodes');
 
 const createPatient = async (req, res) => {
   try {

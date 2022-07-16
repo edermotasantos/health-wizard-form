@@ -5,9 +5,9 @@ const {
   passwordLength,
   passwordIsRequired,
   nameIsRequired,
-} = require('../schemas/messages');
+} = require('../util/messages');
 
-const { BAD_REQUEST } = require('../schemas/statusCodes');
+const { BAD_REQUEST } = require('../util/statusCodes');
 
 const createToken = (user, name) => {
   const jwtConfig = {
