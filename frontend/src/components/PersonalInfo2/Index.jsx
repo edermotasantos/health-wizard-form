@@ -22,11 +22,31 @@ function PersonalInfo2() {
     phone,
   } = newForm;
 
-  const handleChange = ({ target: { value, name } }) => {
+  const fillForm = (name, value) => {
     setNewForm((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+  }
+
+  const fillMobileField = (name, value) => {
+    let newValue = value;
+    console.log('newValue', newValue.length);
+    console.log('mobile', mobile.length);
+
+    if (mobile.length === 0 && (mobile < newValue)) newValue = '(' + value;
+    if (mobile.length === 2 && (mobile < newValue)) newValue = value + ')';
+    if (newValue.length === 9) {
+      if(mobile > newValue) newValue = value.substring(0, value.length  );
+      if(mobile < newValue) newValue = value + '-';
+    }
+    if(newValue.length > 14) newValue = newValue.substring(0,14);
+    fillForm(name, newValue);
+  }
+
+  const handleChange = ({ target: { value, name } }) => {
+    if(name !== 'mobile' || name !== 'phone') fillForm(name, value);
+    if(name === 'mobile') fillMobileField(name, value);
   };
 
   return (
