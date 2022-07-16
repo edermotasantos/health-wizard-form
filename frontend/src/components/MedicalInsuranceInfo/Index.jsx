@@ -35,11 +35,29 @@ function MedicalInsuranceInfo() {
   const everyFieldIsFilled = () => Object.values(newForm).every((field) => field.length !== 0);
   const storeUserList = (stringStorage) => localStorage.setItem('lista_de_usuários', stringStorage);
 
-  const handleChange = ({ target: { value, name } }) => {
+  const fillForm = (name, value) => {
     setNewForm((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+  }
+
+  const fillCardExpirationDate = (name, value) => {
+    let newValue = value;
+    if(card_expiration_date.length === 1) {
+      newValue = value + '/'
+      if(newValue.includes('//')) {
+        newValue = card_expiration_date.substring(0,3);
+      }
+      if(newValue.includes('/') && (newValue.length === 1)) newValue = '';
+    }
+    if(newValue.length > 7) newValue = newValue.substring(0,7);
+    fillForm(name, newValue);
+  }
+
+  const handleChange = ({ target: { value, name } }) => {
+    if(name !== 'medical_insurance_card') fillForm(name, value);
+    fillCardExpirationDate(name, value);
 
     setDataList((prevState) => ({
       ...prevState,
@@ -50,6 +68,7 @@ function MedicalInsuranceInfo() {
       const stringStorage = JSON.stringify(dataList);
       storeUserList(stringStorage);
     }
+    console.log(newForm);
   };
 
   return (
