@@ -27,6 +27,11 @@ function BasicInfo() {
     return (first_name && last_name);
   };
 
+  const birthDateLength = () => {
+    console.log((birth_date.length === 8));
+    return ((birth_date.length === 8));
+  };
+
   const handleChange = ({ target: { value, name } }) => {
     if (nameFieldIsFilled()) {
       const fullName = `${first_name} ${last_name}`;
@@ -39,6 +44,11 @@ function BasicInfo() {
         ...prevState,
         full_name: fullName,
       }));
+    }
+
+    if (birthDateLength()) {
+      const stringBirthDateValue =  birth_date.toString();
+      console.log(stringBirthDateValue);
     }
 
     setNewForm((prevState) => ({
