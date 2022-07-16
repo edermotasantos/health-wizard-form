@@ -68,7 +68,6 @@ function MedicalInsuranceInfo() {
       const stringStorage = JSON.stringify(dataList);
       storeUserList(stringStorage);
     }
-    console.log(newForm);
   };
 
   return (

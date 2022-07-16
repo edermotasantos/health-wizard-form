@@ -31,9 +31,6 @@ function PersonalInfo2() {
 
   const fillMobileField = (name, value) => {
     let newValue = value;
-    console.log('newValue', newValue.length);
-    console.log('mobile', mobile.length);
-
     if (mobile.length === 0 && (mobile < newValue)) newValue = '(' + value;
     if (mobile.length === 2 && (mobile < newValue)) newValue = value + ')';
     if (newValue.length === 9) {
@@ -44,9 +41,22 @@ function PersonalInfo2() {
     fillForm(name, newValue);
   }
 
+  const fillPhoneField = (name, value) => {
+    let newValue = value;
+    if (phone.length === 0 && (phone < newValue)) newValue = '(' + value;
+    if (phone.length === 2 && (phone < newValue)) newValue = value + ')';
+    if (newValue.length === 8) {
+      if(phone > newValue) newValue = value.substring(0, value.length  );
+      if(phone < newValue) newValue = value + '-';
+    }
+    if(newValue.length > 13) newValue = newValue.substring(0,13);
+    fillForm(name, newValue);
+  }
+
   const handleChange = ({ target: { value, name } }) => {
     if(name !== 'mobile' || name !== 'phone') fillForm(name, value);
     if(name === 'mobile') fillMobileField(name, value);
+    if(name === 'phone') fillPhoneField(name, value);
   };
 
   return (
