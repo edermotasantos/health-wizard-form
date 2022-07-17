@@ -8,7 +8,7 @@ import Copyright from '../Copyright/Index';
 
 const theme = createTheme();
 
-function UserData() {
+function PatientData() {
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -24,4 +24,4 @@ function UserData() {
   );
 }
 
-export default UserData;
+export default PatientData;

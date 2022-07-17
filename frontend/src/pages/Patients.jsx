@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../components/Header/Index';
 import FormProvider from '../context/FormProvider';
-import UserList from '../components/UserList/Index';
+import PatientList from '../components/PatientList/Index';
 
 function User() {
   return (
     <FormProvider>
       <Header />
-      <UserList />
+      <PatientList />
     </FormProvider>
   );
 }
