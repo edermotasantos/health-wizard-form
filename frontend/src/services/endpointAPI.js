@@ -8,9 +8,9 @@ const api = axios.create({
   baseURL: `http://localhost:${PORT}`,
 });
 
-export const doLogin = async (email, password) => {
+export const doLogin = async (name, password) => {
   try {
-    const result = await api.post('/users', { email, password });
+    const result = await api.post('/users', { name, password });
     return result.data;
   } catch (e) {
     return e;

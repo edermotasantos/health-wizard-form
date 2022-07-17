@@ -28,7 +28,12 @@ function FormProvider({ children }) {
   const [userPage, setUserPage] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [formattedForm, setFormattedForm] = useState({});
-  const [formattedShape, setFormattedShape] = useState({})
+  const [formattedShape, setFormattedShape] = useState({});
+  const [userDataToLogin, setUserDataToLogin] = useState({
+    nome: '',
+    password: ''
+  });
+
   const data = {
     currentStep,
     setCurrentStep,
@@ -44,6 +49,8 @@ function FormProvider({ children }) {
     setFormattedForm,
     formattedShape,
     setFormattedShape,
+    userDataToLogin,
+    setUserDataToLogin,
   };
 
   return (
