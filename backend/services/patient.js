@@ -74,6 +74,7 @@ const createPatient = async ({
     medical_insurance_card,
     card_expiration_date,
 }) => {
+
     const userData = await validateUserData(
         user_id,
         medical_record,

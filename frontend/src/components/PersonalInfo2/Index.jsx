@@ -38,6 +38,9 @@ function PersonalInfo2() {
       if(mobile < newValue) newValue = value + '-';
     }
     if(newValue.length > 14) newValue = newValue.substring(0,14);
+    if(newValue.length === 13 && !newValue.includes(')')) {
+      newValue = newValue.substring(0,4) + ')' + newValue.substring(4,9) + '-' + newValue.substring(9,13);
+    }
     fillForm(name, newValue);
   }
 

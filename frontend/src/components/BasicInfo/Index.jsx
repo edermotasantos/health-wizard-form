@@ -14,6 +14,9 @@ const theme = createTheme();
 
 function BasicInfo() {
   const { newForm, setNewForm } = useContext(FormContext);
+  const { setFormattedForm } = useContext(FormContext);
+  const { formattedShape, setFormattedShape } = useContext(FormContext);
+  
   const {
     medical_record,
     first_name,
@@ -51,7 +54,19 @@ function BasicInfo() {
       const fullName = `${first_name} ${last_name}`;
       fillForm('full_name', fullName);
     }
-    fillBirthDate(name, value);
+    if(name === 'birth_date') fillBirthDate(name, value);
+    if (birth_date.length === 10) {
+      const birthDate = birth_date.substring(6, birth_date.length) + birth_date.substring(2, 6) + birth_date.substring(0, 2);
+      setFormattedShape((prevState) => ({
+        ...prevState,
+        ['birth_date']: birthDate,
+      }))
+      setFormattedForm((prevState) => ({
+        ...prevState,
+        ...newForm,
+        ...formattedShape,
+      }))
+    }
   };
 
   return (
@@ -86,6 +101,19 @@ function BasicInfo() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  autoComplete="given-birth_date"
+                  name="birth_date"
+                  required
+                  fullWidth
+                  id="birth_date"
+                  label="Data de Nascimento"
+                  autoFocus
+                  value={birth_date}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
                   autoComplete="given-first_name"
                   name="first_name"
                   required
@@ -107,19 +135,6 @@ function BasicInfo() {
                   label="Sobrenome"
                   autoFocus
                   value={last_name}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  autoComplete="given-birth_date"
-                  name="birth_date"
-                  required
-                  fullWidth
-                  id="birth_date"
-                  label="Data de Nascimento"
-                  autoFocus
-                  value={birth_date}
                   onChange={handleChange}
                 />
               </Grid>

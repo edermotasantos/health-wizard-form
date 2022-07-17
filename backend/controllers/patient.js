@@ -24,6 +24,7 @@ const createPatient = async (req, res) => {
         medical_insurance_card,
         card_expiration_date,
     } = req.body;
+
     const patientData = await patientService.createPatient({
         user_id,
         medical_record,
@@ -44,7 +45,7 @@ const createPatient = async (req, res) => {
     });
     if (patientData.err) {
       const { statusCode, message } = patientData.err;
-      return res.status(statusCode).json({ message });
+      return res.status(statusCode).json({ message, patientData });
     }
     return res.status(OK).json(patientData);
   } catch (error) {

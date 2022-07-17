@@ -27,7 +27,8 @@ function FormProvider({ children }) {
   const [dataList, setDataList] = useState([]);
   const [userPage, setUserPage] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
+  const [formattedForm, setFormattedForm] = useState({});
+  const [formattedShape, setFormattedShape] = useState({})
   const data = {
     currentStep,
     setCurrentStep,
@@ -39,6 +40,10 @@ function FormProvider({ children }) {
     setUserPage,
     isLoading,
     setIsLoading,
+    formattedForm,
+    setFormattedForm,
+    formattedShape,
+    setFormattedShape,
   };
 
   return (

@@ -1,11 +1,12 @@
 const express = require('express');
-const userRoutes = require('../routes/userRoutes');
-const patientRoutes = require('../routes/patientRoutes');
+const userRoutes = require('./routes/userRoutes');
+const patientRoutes = require('./routes/patientRoutes');
 
 const app = express();
 app.use(express.json());
 
 const cors = require('cors');
+const err = require('./middlewares/error');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 3001;
@@ -19,5 +20,6 @@ app.get('/', (request, response) => {
   response.send();
 });
 
+app.use(err);
 
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}!`));

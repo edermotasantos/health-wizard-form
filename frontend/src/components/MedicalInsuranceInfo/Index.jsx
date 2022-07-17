@@ -10,6 +10,7 @@ import { ButtonGroup, FormControl, InputLabel, MenuItem, Select } from '@mui/mat
 import FormContext from '../../context/FormContext';
 import Copyright from '../Copyright/Index';
 import Previous from '../Previous/Index';
+import HandleSubmit from '../HandleSubmit/Index';
 
 const theme = createTheme();
 
@@ -26,6 +27,8 @@ function MedicalInsuranceInfo() {
   const { newForm, setNewForm } = useContext(FormContext);
   const { dataList, setDataList } = useContext(FormContext);
   const { countUsersData } = useContext(FormContext);
+  const { setFormattedForm } = useContext(FormContext);
+  const { formattedShape, setFormattedShape } = useContext(FormContext);
   const {
     medical_insurance_id,
     medical_insurance_card,
@@ -63,7 +66,18 @@ function MedicalInsuranceInfo() {
       ...prevState,
       [countUsersData]: newForm,
     }));
-
+    if(card_expiration_date.length === 7) {
+      const cardExpirationDate = card_expiration_date.substring(3, card_expiration_date.length) + '/' + card_expiration_date.substring(0, 3) + '01';
+      setFormattedShape((prevState) => ({
+        ...prevState,
+        ['card_expiration_date']: cardExpirationDate,
+      }))
+      setFormattedForm((prevState) => ({
+        ...prevState,
+        ...newForm,
+        ...formattedShape,
+      }));
+    }
     if (everyFieldIsFilled()) {
       const stringStorage = JSON.stringify(dataList);
       storeUserList(stringStorage);
@@ -106,19 +120,6 @@ function MedicalInsuranceInfo() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  autoComplete="given-medical_insurance_card"
-                  name="medical_insurance_card"
-                  required
-                  fullWidth
-                  id="medical_insurance_card"
-                  label="Carteirinha do Convênio"
-                  autoFocus
-                  value={medical_insurance_card}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
                   autoComplete="given-card_expiration_date"
                   name="card_expiration_date"
                   required
@@ -130,12 +131,26 @@ function MedicalInsuranceInfo() {
                   onChange={handleChange}
                 />
               </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="given-medical_insurance_card"
+                  name="medical_insurance_card"
+                  required
+                  fullWidth
+                  id="medical_insurance_card"
+                  label="Carteirinha do Convênio"
+                  autoFocus
+                  value={medical_insurance_card}
+                  onChange={handleChange}
+                />
+              </Grid>
             </Grid>
             <ButtonGroup
               orientation="horizontal"
               fullWidth
             >
               <Previous />
+              <HandleSubmit />
             </ButtonGroup>
           </Box>
         </Box>
