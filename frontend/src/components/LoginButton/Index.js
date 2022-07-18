@@ -12,7 +12,7 @@ function LoginButton() {
   } = userDataToLogin;
   const navigate = useNavigate();
 
-  const formPage = () =>  navigate('/');
+  const formPage = () =>  navigate('/form');
 
   const handleChange = async () => {
     const data = await doLogin(nome, password);
