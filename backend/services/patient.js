@@ -1,12 +1,13 @@
 const { patient } = require('../models');
-const { patientAlreadyExists } = require('../util/messages');
+const { patientAlreadyExists, invalidEmail } = require('../util/messages');
 const {
   validateNameLength,
   validateCPFLength,
   validateFields,
+  validateEmail,
 } = require('../util/validations');
 
-const { CONFLICT } = require('../util/statusCodes');
+const { CONFLICT, BAD_REQUEST } = require('../util/statusCodes');
 
 const validateUserData = async (
     user_id,
@@ -39,7 +40,7 @@ const validateUserData = async (
   const validateMedicalInsuranceId = validateFields.checkMedicalInsuranceId();
   const validateMedicalInsuranceCard = validateFields.checkMedicalInsuranceCard();
   const validatecardExpirationDate = validateFields.checkCardExpirationDate();
-
+  
   if (!user_id) return validateUserId;
   if (!medical_record) return validateMedicalRecord;
   if (!first_name) return validateFirstName;
@@ -99,6 +100,8 @@ const createPatient = async ({
     if (checkCPFLength) return checkCPFLength;
     const cpfAlreadyExists = await patient.findOne({ where: { cpf } });
     if (cpfAlreadyExists) return { err: { statusCode: CONFLICT, message: patientAlreadyExists } };
+    const checkEmail = await validateEmail(email);
+    if (checkEmail) return { err: { statusCode: BAD_REQUEST, message: invalidEmail } };
     const createdUser = await patient.create({
         user_id,
         medical_record,

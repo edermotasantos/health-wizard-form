@@ -26,7 +26,7 @@ const validateNameLength = (name) => {
 };
   
 const validateCPFLength = (cpf) => {
-  if (cpf.length < 11) {
+  if (cpf.length >= 11) {
     return { err: { statusCode: BAD_REQUEST, message: cpfLength } };
   }
 };
@@ -76,8 +76,16 @@ const validateFields = {
   },
 };
 
+  const validateEmail = (email) => {
+    const validEmail = /[\w\d.+_-]+@[\w]+.com/;
+    if (!validEmail.test(email)) {
+      return true;
+  }
+  }
+
 module.exports = {
   validateNameLength,
   validateCPFLength,
   validateFields,
+  validateEmail,
 };
