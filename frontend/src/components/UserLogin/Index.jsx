@@ -14,6 +14,7 @@ const theme = createTheme();
 
 function UserLogin() {
   const { userDataToLogin, setUserDataToLogin } = useContext(FormContext);
+  const { formStatus } = useContext(FormContext);
   const {
     nome,
     password,
@@ -72,6 +73,9 @@ function UserLogin() {
               </Grid>
               <LoginButton />
             </Box>
+            <Typography variant="poster" sx={{ color: 'red', fontSize: '1.0rem' }} component="h6">
+              { formStatus }
+            </Typography>
           </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
