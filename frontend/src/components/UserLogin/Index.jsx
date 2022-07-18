@@ -8,6 +8,9 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import FormContext from '../../context/FormContext';
 import LoginButton from '../LoginButton/Index';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
 
 const theme = createTheme();
 
@@ -30,52 +33,62 @@ function UserLogin() {
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-          <Box
-            sx={{
-              marginTop: 8,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <Typography component="h1" variant="h5">
-              Login
-            </Typography>
-            <Box component="div" sx={{ mt: 3 }}>
-              <Grid container spacing={2}>
-              <Grid item xs={12}>
-                  <TextField
-                    autoComplete="given-nome"
-                    name="nome"
-                    required
-                    fullWidth
-                    id="nome"
-                    label="Nome"
-                    autoFocus
-                    value={nome}
-                    onChange={handleChange}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    autoComplete="given-password"
-                    name="password"
-                    required
-                    fullWidth
-                    id="password"
-                    label="Senha"
-                    autoFocus
-                    value={password}
-                    onChange={handleChange}
-                  />
-                </Grid>
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Box sx={{ mt: 5 }}>
+            <TextField
+              margin="normal"
+              autoFocus
+              autoComplete="given-nome"
+              name="nome"
+              required
+              fullWidth
+              id="nome"
+              label="Nome"
+              value={nome}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              type="password"
+              autoComplete="current-password"
+              name="password"
+              required
+              fullWidth
+              id="password"
+              label="Senha"
+              autoFocus
+              value={password}
+              onChange={handleChange}
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <LoginButton />
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
               </Grid>
-              <LoginButton />
-            </Box>
-            <Typography variant="poster" sx={{ color: 'red', fontSize: '1.0rem' }} component="h6">
-              { formStatus }
-            </Typography>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
           </Box>
+        </Box>
+        <Typography variant="poster" sx={{ color: 'red', fontSize: '1.0rem' }} component="h6">
+          { formStatus }
+        </Typography>
       </Container>
     </ThemeProvider>
   );
