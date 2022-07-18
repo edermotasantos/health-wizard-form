@@ -141,7 +141,7 @@ function MedicalInsuranceInfo() {
               <HandleSubmit />
             </ButtonGroup>
           </Box>
-          <Typography variant="poster" sx={{ color: 'red', fontSize: '1.0rem' }} component="h6">
+          <Typography variant="poster" sx={{ color: 'orange', fontSize: '1.0rem' }} component="h6">
             { formStatus }
           </Typography>
         </Box>

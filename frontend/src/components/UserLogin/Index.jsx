@@ -73,6 +73,9 @@ function UserLogin() {
               value={password}
               onChange={handleChange}
             />
+            <Typography variant="poster" sx={{ color: 'orange', fontSize: '1.0rem' }} component="h6">
+              { formStatus }
+            </Typography>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
@@ -92,9 +95,6 @@ function UserLogin() {
             </Grid>
           </Box>
         </Box>
-        <Typography variant="poster" sx={{ color: 'red', fontSize: '1.0rem' }} component="h6">
-          { formStatus }
-        </Typography>
       </Container>
     </ThemeProvider>
   );

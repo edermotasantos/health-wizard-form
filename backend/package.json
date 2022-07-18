@@ -10,7 +10,7 @@
     "server": "nodemon .",
     "dev": "concurrently \"npm start\" \"npm run server\" \"npm run client\"",
     "test": "jest",
-    "test-coverage": "jest --runInBand --coverage",
+    "test-coverage": "jest --coverage",
     "debug": "nodemon .",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
