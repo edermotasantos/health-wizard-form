@@ -8,7 +8,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ButtonGroup } from '@mui/material';
 import FormContext from '../../context/FormContext';
-import Copyright from '../Copyright/Index';
 import Next from '../Next/Index';
 import Previous from '../Previous/Index';
 
@@ -129,7 +128,6 @@ function PersonalInfo2() {
             </ButtonGroup>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );

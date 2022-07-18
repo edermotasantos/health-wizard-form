@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Next from '../Next/Index';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import Copyright from '../Copyright/Index';
 
 const theme = createTheme();
 
@@ -17,7 +16,6 @@ function PatientData() {
             User Data
           </Typography>
           <Next />
-          <Copyright sx={{ mt: 5 }} />
         </Box>
       </Container>
     </ThemeProvider>

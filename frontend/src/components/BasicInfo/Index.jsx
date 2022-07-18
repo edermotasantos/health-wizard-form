@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import FormContext from '../../context/FormContext';
-import Copyright from '../Copyright/Index';
 import Next from '../Next/Index';
 import { fillBirthDate } from '../../util/dateFormatter';
 
@@ -141,7 +140,6 @@ function BasicInfo() {
             <Next />
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );

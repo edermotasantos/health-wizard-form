@@ -8,7 +8,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ButtonGroup, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import FormContext from '../../context/FormContext';
-import Copyright from '../Copyright/Index';
 import Previous from '../Previous/Index';
 import HandleSubmit from '../HandleSubmit/Index';
 
@@ -146,7 +145,6 @@ function MedicalInsuranceInfo() {
             { formStatus }
           </Typography>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
