@@ -7,10 +7,12 @@ import PatientList from '../PatientList/Index.jsx';
 import PatientData from '../PatientData/Index';
 import UserRegisteredSuccessfully from '../UserRegisteredSuccessfully/Index';
 import MedicalInsuranceInfo from '../MedicalInsuranceInfo/Index'
+import UserLogin from '../UserLogin/Index';
 
 function Interface() {
   const { currentStep } = useContext(FormContext);
   const renderComponent = {
+    0: <UserLogin />,
     1: <BasicInfo />,
     2: <PersonalInfo1 />,
     3: <PersonalInfo2 />,

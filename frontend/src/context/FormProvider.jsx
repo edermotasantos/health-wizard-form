@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import FormContext from './FormContext';
 
 function FormProvider({ children }) {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState();
   const [newForm, setNewForm] = useState({
     user_id: 1,
     medical_record: '',
@@ -33,7 +33,8 @@ function FormProvider({ children }) {
     nome: '',
     password: ''
   });
-  const [formStatus, setFormStatus] = useState();
+  const [auth, setAuth] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const data = {
     currentStep,
@@ -52,8 +53,10 @@ function FormProvider({ children }) {
     setFormattedShape,
     userDataToLogin,
     setUserDataToLogin,
-    formStatus,
-    setFormStatus,
+    auth,
+    setAuth,
+    anchorEl,
+    setAnchorEl,
   };
 
   return (

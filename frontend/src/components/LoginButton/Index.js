@@ -1,22 +1,24 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import FormContext from '../../context/FormContext';
 import { doLogin } from '../../services/endpointAPI';
 
 function LoginButton() {
   const { userDataToLogin } = useContext(FormContext);
+  const { setCurrentStep } = useContext(FormContext);
+  const { setAuth } = useContext(FormContext);
+
   const {
     nome,
     password,
   } = userDataToLogin;
-  const navigate = useNavigate();
-
-  const formPage = () =>  navigate('/form');
 
   const handleChange = async () => {
     const data = await doLogin(nome, password);
-    if (data.token) formPage();
+    if (data.token) {
+      setAuth(true);
+      setCurrentStep((prevState) => prevState + 1);
+    }
   };
 
   return (
