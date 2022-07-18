@@ -29,6 +29,7 @@ function MedicalInsuranceInfo() {
   const { countUsersData } = useContext(FormContext);
   const { setFormattedForm } = useContext(FormContext);
   const { formattedShape, setFormattedShape } = useContext(FormContext);
+  const { formStatus, setFormStatus } = useContext(FormContext);
   const {
     medical_insurance_id,
     medical_insurance_card,
@@ -59,6 +60,7 @@ function MedicalInsuranceInfo() {
   }
 
   const handleChange = ({ target: { value, name } }) => {
+    setFormStatus('');
     if(name !== 'medical_insurance_card') fillForm(name, value);
     fillCardExpirationDate(name, value);
 
@@ -153,6 +155,9 @@ function MedicalInsuranceInfo() {
               <HandleSubmit />
             </ButtonGroup>
           </Box>
+          <Typography variant="poster" sx={{ color: 'red', fontSize: '1.0rem' }} component="h6">
+            { formStatus }
+          </Typography>
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>

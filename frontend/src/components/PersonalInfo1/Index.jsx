@@ -67,6 +67,7 @@ const genero = [
 
 function PersonalInfo1() {
   const { newForm, setNewForm } = useContext(FormContext);
+  const { setFormStatus } = useContext(FormContext);
 
   const {
     gender_id,
@@ -76,6 +77,7 @@ function PersonalInfo1() {
   } = newForm;
 
   const handleChange = ({ target: { value, name } }) => {
+    setFormStatus('');
     setNewForm((prevState) => ({
       ...prevState,
       [name]: value,

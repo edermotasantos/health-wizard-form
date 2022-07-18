@@ -16,6 +16,7 @@ const theme = createTheme();
 
 function PersonalInfo2() {
   const { newForm, setNewForm } = useContext(FormContext);
+  const { setFormStatus } = useContext(FormContext);
   const {
     email,
     mobile,
@@ -57,6 +58,7 @@ function PersonalInfo2() {
   }
 
   const handleChange = ({ target: { value, name } }) => {
+    setFormStatus('');
     if(name !== 'mobile' || name !== 'phone') fillForm(name, value);
     if(name === 'mobile') fillMobileField(name, value);
     if(name === 'phone') fillPhoneField(name, value);

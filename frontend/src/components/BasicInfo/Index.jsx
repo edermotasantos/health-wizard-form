@@ -16,6 +16,7 @@ function BasicInfo() {
   const { newForm, setNewForm } = useContext(FormContext);
   const { setFormattedForm } = useContext(FormContext);
   const { formattedShape, setFormattedShape } = useContext(FormContext);
+  const { setFormStatus } = useContext(FormContext);
   
   const {
     medical_record,
@@ -49,6 +50,7 @@ function BasicInfo() {
   }
 
   const handleChange = ({ target: { value, name } }) => {
+    setFormStatus('');
     if(name !== 'birth_date') fillForm(name, value);
     if (nameFieldIsFilled()) {
       const fullName = `${first_name} ${last_name}`;

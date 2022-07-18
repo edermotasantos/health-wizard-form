@@ -33,6 +33,7 @@ function FormProvider({ children }) {
     nome: '',
     password: ''
   });
+  const [formStatus, setFormStatus] = useState();
 
   const data = {
     currentStep,
@@ -51,6 +52,8 @@ function FormProvider({ children }) {
     setFormattedShape,
     userDataToLogin,
     setUserDataToLogin,
+    formStatus,
+    setFormStatus,
   };
 
   return (
