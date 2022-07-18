@@ -25,14 +25,13 @@ function HandleSubmit() {
     if (message === '"name" length must be at least 8 characters long') {
       setFormStatus('Por favor, preencha o nome completo');
     }
-    console.log(message);
   }
 
   const handleSubmit = async () => {
     const data = await toRegisterPatient(formattedForm);
     if (data.id === undefined) messages(data);
     if (data.id !== undefined) successMessage();
-  }; // quando é registrado com sucesso vem um objeto com chave id (data.id)
+  };
 
   return (
     <Button
