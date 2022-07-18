@@ -41,10 +41,13 @@ function UserLogin() {
             alignItems: 'center',
           }}
         >
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" sx={{ mt: 5 }}>
+            Health Wizard Form
+          </Typography>
+          <Typography component="h1" variant="h5" sx={{ mt: 2 }}>
             Login
           </Typography>
-          <Box sx={{ mt: 5 }}>
+          <Box sx={{ mt: 2 }}>
             <TextField
               margin="normal"
               autoFocus
