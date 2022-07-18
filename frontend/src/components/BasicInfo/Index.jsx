@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import FormContext from '../../context/FormContext';
 import Copyright from '../Copyright/Index';
 import Next from '../Next/Index';
+import { fillBirthDate } from '../../util/dateFormatter';
 
 const theme = createTheme();
 
@@ -36,17 +37,21 @@ function BasicInfo() {
     }));
   }
 
-  const fillBirthDate = (name, value) => {
-    let newValue = value;
-    if(birth_date.length === 1 || birth_date.length === 4) {
-      newValue = value + '/'
-      if(newValue.includes('//')) {
-        newValue = birth_date.substring(0,3);
-      }
-      if(newValue.includes('/') && (newValue.length === 1)) newValue = '';
-    }
-    if(newValue.length > 10) newValue = newValue.substring(0,10);
-    fillForm(name, newValue);
+  const dateFormatToSql = () => {
+    const birthDate = birth_date
+      .substring(6, birth_date.length) + birth_date
+      .substring(2, 6) + birth_date.substring(0, 2);
+
+    setFormattedShape((prevState) => ({
+      ...prevState,
+      ['birth_date']: birthDate,
+    }));
+
+    setFormattedForm((prevState) => ({
+      ...prevState,
+      ...newForm,
+      ...formattedShape,
+    }));
   }
 
   const handleChange = ({ target: { value, name } }) => {
@@ -56,19 +61,11 @@ function BasicInfo() {
       const fullName = `${first_name} ${last_name}`;
       fillForm('full_name', fullName);
     }
-    if(name === 'birth_date') fillBirthDate(name, value);
-    if (birth_date.length === 10) {
-      const birthDate = birth_date.substring(6, birth_date.length) + birth_date.substring(2, 6) + birth_date.substring(0, 2);
-      setFormattedShape((prevState) => ({
-        ...prevState,
-        ['birth_date']: birthDate,
-      }))
-      setFormattedForm((prevState) => ({
-        ...prevState,
-        ...newForm,
-        ...formattedShape,
-      }))
+    if(name === 'birth_date') {
+      const birthDateNewFormat = fillBirthDate(name, value, birth_date)
+      fillForm(name, birthDateNewFormat);
     }
+    if (birth_date.length === 10) dateFormatToSql();
   };
 
   return (
