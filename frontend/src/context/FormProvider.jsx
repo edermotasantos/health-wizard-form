@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import FormContext from './FormContext';
 
 function FormProvider({ children }) {
-  const [currentStep, setCurrentStep] = useState();
+  const [currentStep, setCurrentStep] = useState(1);
   const [newForm, setNewForm] = useState({
     user_id: 1,
     medical_record: '',
@@ -24,15 +24,14 @@ function FormProvider({ children }) {
     medical_insurance_card: '',
     card_expiration_date: ''
   });
-  const [dataList, setDataList] = useState([]);
-  const [userPage, setUserPage] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [formattedForm, setFormattedForm] = useState({});
   const [formattedShape, setFormattedShape] = useState({});
   const [userDataToLogin, setUserDataToLogin] = useState({
     nome: '',
     password: ''
   });
+  const [formStatus, setFormStatus] = useState();
   const [auth, setAuth] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -41,10 +40,6 @@ function FormProvider({ children }) {
     setCurrentStep,
     newForm,
     setNewForm,
-    dataList,
-    setDataList,
-    userPage,
-    setUserPage,
     isLoading,
     setIsLoading,
     formattedForm,
@@ -53,6 +48,8 @@ function FormProvider({ children }) {
     setFormattedShape,
     userDataToLogin,
     setUserDataToLogin,
+    formStatus,
+    setFormStatus,
     auth,
     setAuth,
     anchorEl,

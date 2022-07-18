@@ -25,8 +25,6 @@ const convenio = [
 
 function MedicalInsuranceInfo() {
   const { newForm, setNewForm } = useContext(FormContext);
-  const { dataList, setDataList } = useContext(FormContext);
-  const { countUsersData } = useContext(FormContext);
   const { setFormattedForm } = useContext(FormContext);
   const { formattedShape, setFormattedShape } = useContext(FormContext);
   const { formStatus, setFormStatus } = useContext(FormContext);
@@ -35,9 +33,6 @@ function MedicalInsuranceInfo() {
     medical_insurance_card,
     card_expiration_date
   } = newForm;
-
-  const everyFieldIsFilled = () => Object.values(newForm).every((field) => field.length !== 0);
-  const storeUserList = (stringStorage) => localStorage.setItem('lista_de_usuários', stringStorage);
 
   const fillForm = (name, value) => {
     setNewForm((prevState) => ({
@@ -64,10 +59,6 @@ function MedicalInsuranceInfo() {
     if(name !== 'medical_insurance_card') fillForm(name, value);
     fillCardExpirationDate(name, value);
 
-    setDataList((prevState) => ({
-      ...prevState,
-      [countUsersData]: newForm,
-    }));
     if(card_expiration_date.length === 7) {
       const cardExpirationDate = card_expiration_date.substring(3, card_expiration_date.length) + '/' + card_expiration_date.substring(0, 3) + '01';
       setFormattedShape((prevState) => ({
@@ -79,10 +70,6 @@ function MedicalInsuranceInfo() {
         ...newForm,
         ...formattedShape,
       }));
-    }
-    if (everyFieldIsFilled()) {
-      const stringStorage = JSON.stringify(dataList);
-      storeUserList(stringStorage);
     }
   };
 

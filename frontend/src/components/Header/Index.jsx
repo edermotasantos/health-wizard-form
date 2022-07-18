@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import FormContext from '../../context/FormContext';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -24,18 +24,33 @@ function Form() {
     false: 1,
   };
  
-  const handleChange = ({ target: { checked } }) => {
-    setAuth(checked);
+  const handleChange = (event) => {
+    setAuth(event.target.checked);
+    console.log(auth);
     setCurrentStep(stepState[auth]);
   };
 
-  const handleMenu = ({ currentTarget }) => {
-    setAnchorEl(currentTarget);
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+    console.log(anchorEl);
   };
   
   const handleClose = () => {
     setAnchorEl(null);
+    console.log(anchorEl);
   };
+
+  if (!auth) {
+    useEffect(() => {
+      setCurrentStep(0);
+    }, []);
+  }
+
+  if (auth) {
+    useEffect(() => {
+      setCurrentStep(1);
+    }, []);
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
