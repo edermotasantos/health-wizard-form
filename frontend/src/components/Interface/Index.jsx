@@ -5,7 +5,7 @@ import BasicInfo from '../BasicInfo/Index';
 import FormContext from '../../context/FormContext';
 import PatientList from '../PatientList/Index.jsx';
 import PatientData from '../PatientData/Index';
-import UserRegisteredSuccessfully from '../UserRegisteredSuccessfully/Index';
+import UserRegisteredSuccessfully from '../PatientRegisteredSuccessfully/Index';
 import MedicalInsuranceInfo from '../MedicalInsuranceInfo/Index'
 import UserLogin from '../UserLogin/Index';
 

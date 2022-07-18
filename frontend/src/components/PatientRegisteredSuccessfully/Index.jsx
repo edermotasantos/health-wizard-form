@@ -6,7 +6,7 @@ import Copyright from '../Copyright/Index';
 
 const theme = createTheme();
 
-function Header() {
+function PatientRegisteredSuccessfully() {
   return (
     <ThemeProvider theme={theme}>
     <Container component="main" maxWidth="xs">
@@ -28,4 +28,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default PatientRegisteredSuccessfully;
