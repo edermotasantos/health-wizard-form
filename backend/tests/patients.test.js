@@ -9,6 +9,34 @@ describe('1 - Sua aplicação deve ter o endpoint POST `/patients`', () => {
     shell.exec('npx sequelize-cli db:create && npx sequelize-cli db:migrate $');
   });
 
+  it('Será validado que é possível cadastrar um paciente com sucesso', async () => {
+    await frisby
+      .post(`${url}/patients`,
+        {
+          user_id: 1,
+          gender_id: 1,
+          medical_insurance_id: 1,
+          uf_id: 25,
+          medical_record: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          first_name: "Lorem",
+          last_name: "Ipsum",
+          full_name: "Lorem Ipsum",
+          birth_date: "1978-05-06",
+          cpf: "12395678910",
+          rg: "220130436",
+          email: "lorem@gmail.com",
+          mobile: "11970004386",
+          phone: "1122084787",
+          medical_insurance_card: "6377396708905689",
+          card_expiration_date: "2027-01-01",
+        })
+      .expect('status', 201)
+      .then((response) => {
+        const { json } = response;
+        expect(json.token).not.toBeNull();
+      });
+  });
+
   it('Será validado que o campo `user_id` é obrigatório', async () => {
     await frisby
       .post(`${url}/patients`,
@@ -331,34 +359,6 @@ describe('1 - Sua aplicação deve ter o endpoint POST `/patients`', () => {
       .then((response) => {
         const { json } = response;
         expect(json.message).toBe('"card expiration date" is required');
-      });
-  });
-  
-  it('Será validado que é possível cadastrar um paciente com sucesso', async () => {
-    await frisby
-      .post(`${url}/patients`,
-        {
-          user_id: 1,
-          gender_id: 1,
-          medical_insurance_id: 1,
-          uf_id: 25,
-          medical_record: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          first_name: "Lorem",
-          last_name: "Ipsum",
-          full_name: "Lorem Ipsum",
-          birth_date: "1978-05-06",
-          cpf: "12395678910",
-          rg: "220130436",
-          email: "lorem@gmail.com",
-          mobile: "11970004386",
-          phone: "1122084787",
-          medical_insurance_card: "6377396708905689",
-          card_expiration_date: "2027-01-01",
-        })
-      .expect('status', 201)
-      .then((response) => {
-        const { json } = response;
-        expect(json.token).not.toBeNull();
       });
   });
 
