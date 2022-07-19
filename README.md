@@ -46,7 +46,7 @@ Para facilitar a organização dos dados foi considerado o uso da normalização
 
 Essa é a organização de cada tabela:
 
-Dados do usuário
+Dados do usuário:
 
 ```json
 {
@@ -224,11 +224,11 @@ Unidade Federativas (UF):
     "abbreviation": "TO",
   },
 ]
-```
+````
 
 Convênio Médico:
 
-```json
+````json
 [
   {
     "id": 1,
@@ -255,9 +255,9 @@ Convênio Médico:
     "name": "SulAmérica"
   },
 ]
-```
+````
 
-Dados do Paciente
+Dados do Paciente:
 
 ```json
 {
