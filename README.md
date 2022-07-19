@@ -7,9 +7,13 @@
   <a href = "mailto:eder.mota@outlook.com"><img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" target="_blank"></a> 
 </div>
 
+---
+
 <p align="center">
-  <img src="/home/eder/desafios-tecnicos/health-wizard-form/frontend/public/health-wizard-form-mobile.jpg" alt="Sublime's custom image"/>
+  <img src="/frontend/public/health-wizard-form-mobile.jpg" alt="Sublime's custom image"/>
 </p>
+
+
 ---
 
 ## Contexto
