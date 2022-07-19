@@ -316,6 +316,7 @@ Obs.: Nessa representação foi desconsideradas as chaves `createdAt` e `updated
 - `Node.js`
 - `MySQL`
 - `Sequelize`
+- `JWT`
 - `Jest`
 
 ## Front End
@@ -330,6 +331,7 @@ O desenvolvimento da aplicação foi feito no `VSCODE`, inicialmente trabalhado 
 Logo após foi criada uma função para o preenchimento de um arquivo `.txt` de modo a atender os requisitos inicias.
 No `Back End` me propus a trabalhar com `Node.js`, `MySQL` e `Sequelizer` para facilitar o desenvolvimento.
 Logo após desenvolver todos alguns endpoints e toda a estrutura necessária para popular o banco de dados, retornei ao Front End trabalhando não só em ajustes para renderização e a estilização da página, mas também para fazer o `fetch` para envio e recebimento dos dados.
+No `Back End` foram desevolvidos 25 testes utilizando Jest e auxiliaram a melhorar o desenvolvimento do projeto.
 
 ## Como instalar
 
