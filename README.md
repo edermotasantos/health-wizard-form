@@ -50,9 +50,9 @@ Um usuário é encarregado de fazer o cadastro de pacientes. Foram considerados 
 
 Para que o usuário consiga ter acesso ao formuláriom, é necessário que o mesmo esteja logado e preencha todos os campos necessários. É importante salientar que não é possível registrar duas vezes o mesmo CPF. Sendo os seguintes dados:
 
-usuário: teste.be3
-senha: ProcSeletivo#2020
-base de dados: DB
+usuário: `teste.be3`
+senha: `ProcSeletivo#2020`
+base de dados: `DB`
 
 O banco de dados foi configurado para rodar localmente e com as configurações de ambiente protegidos.
 
@@ -332,6 +332,7 @@ Logo após foi criada uma função para o preenchimento de um arquivo `.txt` de 
 No `Back End` me propus a trabalhar com `Node.js`, `MySQL` e `Sequelizer` para facilitar o desenvolvimento.
 Logo após desenvolver todos alguns endpoints e toda a estrutura necessária para popular o banco de dados, retornei ao Front End trabalhando não só em ajustes para renderização e a estilização da página, mas também para fazer o `fetch` para envio e recebimento dos dados.
 No `Back End` foram desevolvidos 25 testes utilizando Jest e auxiliaram a melhorar o desenvolvimento do projeto.
+Por conta do tempo, tive que deixar algumas features de lado como a edição dos dados dos pacientes e não codifiquei a senha do usuário. 
 
 ## Como instalar
 
@@ -389,16 +390,6 @@ A API consta com 2 rotas:
 - `/users` [`POST`] Para o usuário logar
 - `/patients` [`POST`] Para enviar os dados dos pacientes
 
----
-
-## Desenvolvimento
-
----
-
-Durante o desenvolvimento do `front end` (client), no envio para a inserção de novas respostas, foi decidido utilizar o dado que retorna desta inserção utilizando o método `POST`. Sendo utilizados os dados para serem exibidos na renderização das quantidades de respostas.
-
----
-
 ### Banco de dados
 
 Foi utilizado o `MongoDB` pela fácil inserção e extração de dados.
@@ -415,6 +406,7 @@ Foi utilizado o `MongoDB` pela fácil inserção e extração de dados.
 
 - Implementar mais teste Jest e Cypress
 - Deploy no `Heroku`
+- Edição dos dados dos pacientes
 
 ---
 
