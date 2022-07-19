@@ -7,6 +7,11 @@
   <a href = "mailto:eder.mota@outlook.com"><img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" target="_blank"></a> 
 </div>
 
+<p align="center">
+  <img src="/home/eder/desafios-tecnicos/health-wizard-form/frontend/public/health-wizard-form-mobile.jpg" alt="Sublime's custom image"/>
+</p>
+---
+
 ## Contexto
 
 ---
@@ -58,193 +63,192 @@ Dados do usuário:
 
 Unidade Federativas (UF):
 
-````json
+```json
 [
   {
     "id": 1,
     "uf_code": 12,
     "federation_unit": "Acre (AC)",
-    "abbreviation": "AC",
+    "abbreviation": "AC"
   },
   {
     "id": 2,
     "uf_code": 27,
     "federation_unit": "Alagoas (AL)",
-    "abbreviation": "AL",
+    "abbreviation": "AL"
   },
   {
     "id": 3,
     "uf_code": 16,
     "federation_unit": "Amapá (AP)",
-    "abbreviation": "AP",
+    "abbreviation": "AP"
   },
   {
     "id": 4,
     "uf_code": 13,
     "federation_unit": "Amazonas (AM)",
-    "abbreviation": "AM",
+    "abbreviation": "AM"
   },
   {
     "id": 5,
     "uf_code": 29,
     "federation_unit": "Bahia (BA)",
-    "abbreviation": "BA",
+    "abbreviation": "BA"
   },
   {
     "id": 6,
     "uf_code": 23,
     "federation_unit": "Ceará (CE)",
-    "abbreviation": "CE",
+    "abbreviation": "CE"
   },
   {
     "id": 7,
     "uf_code": 53,
     "federation_unit": "Distrito Federal (DF)",
-    "abbreviation": "DF",
-
+    "abbreviation": "DF"
   },
   {
     "id": 8,
     "uf_code": 32,
     "federation_unit": "Espírito Santo (ES)",
-    "abbreviation": "ES",
+    "abbreviation": "ES"
   },
   {
     "id": 9,
     "uf_code": 52,
     "federation_unit": "Goiás (GO)",
-    "abbreviation": "GO",
+    "abbreviation": "GO"
   },
   {
     "id": 10,
     "uf_code": 21,
     "federation_unit": "Maranhão (MA)",
-    "abbreviation": "MA",
+    "abbreviation": "MA"
   },
   {
     "id": 11,
     "uf_code": 51,
     "federation_unit": "Mato Grosso (MT)",
-    "abbreviation": "MT",
+    "abbreviation": "MT"
   },
   {
     "id": 12,
     "uf_code": 50,
     "federation_unit": "Mato Grosso do Sul (MS)",
-    "abbreviation": "MS",
+    "abbreviation": "MS"
   },
   {
     "id": 13,
     "uf_code": 31,
     "federation_unit": "Minas Gerais (MG)",
-    "abbreviation": "MG",
+    "abbreviation": "MG"
   },
   {
     "id": 14,
     "uf_code": 15,
     "federation_unit": "Pará (PA)",
-    "abbreviation": "PA",
+    "abbreviation": "PA"
   },
   {
     "id": 15,
     "uf_code": 25,
     "federation_unit": "Paraíba (PB)",
-    "abbreviation": "PB",
+    "abbreviation": "PB"
   },
   {
     "id": 16,
     "uf_code": 41,
     "federation_unit": "Paraná (PR)",
-    "abbreviation": "PR",
+    "abbreviation": "PR"
   },
   {
     "id": 17,
     "uf_code": 26,
     "federation_unit": "Pernambuco (PE)",
-    "abbreviation": "PE",
+    "abbreviation": "PE"
   },
   {
     "id": 18,
     "uf_code": 22,
     "federation_unit": "Piauí (PI)",
-    "abbreviation": "PI",
+    "abbreviation": "PI"
   },
   {
     "id": 19,
     "uf_code": 33,
     "federation_unit": "Rio de Janeiro (RJ)",
-    "abbreviation": "RJ",
+    "abbreviation": "RJ"
   },
   {
     "id": 20,
     "uf_code": 24,
     "federation_unit": "Rio Grande do Norte (RN)",
-    "abbreviation": "RN",
+    "abbreviation": "RN"
   },
   {
     "id": 21,
     "uf_code": 43,
     "federation_unit": "Rio Grande do Sul (RS)",
-    "abbreviation": "RS",
+    "abbreviation": "RS"
   },
   {
     "id": 22,
     "uf_code": 11,
     "federation_unit": "Rondônia (RO)",
-    "abbreviation": "RO",
+    "abbreviation": "RO"
   },
   {
     "id": 23,
     "uf_code": 14,
     "federation_unit": "Roraima (RR)",
-    "abbreviation": "RR",
+    "abbreviation": "RR"
   },
   {
     "id": 24,
     "uf_code": 42,
     "federation_unit": "Santa Catarina (SC)",
-    "abbreviation": "SC",
+    "abbreviation": "SC"
   },
   {
     "id": 25,
     "uf_code": 35,
     "federation_unit": "São Paulo (SP)",
-    "abbreviation": "SP",
+    "abbreviation": "SP"
   },
   {
     "id": 26,
     "uf_code": 28,
     "federation_unit": "Sergipe (SE)",
-    "abbreviation": "SE",
+    "abbreviation": "SE"
   },
   {
     "id": 27,
     "uf_code": 17,
     "federation_unit": "Tocantins (TO)",
-    "abbreviation": "TO",
-  },
+    "abbreviation": "TO"
+  }
 ]
-````
+```
 
 Convênio Médico:
 
-````json
+```json
 [
   {
     "id": 1,
-    "name": "Amil Assistência Médica",
+    "name": "Amil Assistência Médica"
   },
   {
     "id": 2,
-    "name": "Bradesco Seguros",
+    "name": "Bradesco Seguros"
   },
   {
     "id": 3,
-    "name": "Central Nacional Unimed (CNU)",
+    "name": "Central Nacional Unimed (CNU)"
   },
   {
     "id": 4,
-    "name": "GreenLine Sistema de Saúde",
+    "name": "GreenLine Sistema de Saúde"
   },
   {
     "id": 5,
@@ -253,9 +257,9 @@ Convênio Médico:
   {
     "id": 6,
     "name": "SulAmérica"
-  },
+  }
 ]
-````
+```
 
 Dados do Paciente:
 
@@ -279,7 +283,7 @@ Dados do Paciente:
   "medical_insurance_card": "6377396708905689",
   "card_expiration_date": "2027-01-01"
 }
-````
+```
 
 Em dados do paciente tem as foreign keys:
 
