@@ -17,9 +17,8 @@ https://user-images.githubusercontent.com/82417443/179649329-f5dd6577-b3fc-41dd-
 
 ## Design Responsivo
 
-<p align="center">
-  <img src="/frontend/public/health-wizard-form-mobile.jpg" alt="Sublime's custom image"/>
-</p>
+
+https://user-images.githubusercontent.com/82417443/179650060-d65e54a9-62ec-4a6f-81c4-7ed6974dac54.mp4
 
 
 ---
