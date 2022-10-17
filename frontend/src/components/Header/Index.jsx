@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 
-function Form() {
+function Header() {
   const { auth, setAuth } = useContext(FormContext);
   const { anchorEl, setAnchorEl } = useContext(FormContext);
   const { setCurrentStep } = useContext(FormContext);
@@ -118,4 +118,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default Header;

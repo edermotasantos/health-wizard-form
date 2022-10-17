@@ -6,7 +6,7 @@ import { messages } from '../../util/messages';
 
 function LoginButton() {
   const { setFormStatus } = useContext(FormContext);
-  const { userDataToLogin } = useContext(FormContext);
+  const { userDataToLogin, setUserDataToLogin } = useContext(FormContext);
   const { setCurrentStep } = useContext(FormContext);
   const { setAuth } = useContext(FormContext);
 
@@ -20,6 +20,7 @@ function LoginButton() {
     if (data.token) {
       setAuth(true);
       setCurrentStep((prevState) => prevState + 1);
+      setUserDataToLogin('');
       return
     }
     const message = messages(data);
